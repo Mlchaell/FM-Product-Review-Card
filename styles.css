@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  /* Colors */
+  --clr-dark-cyan: hsl(158, 36%, 37%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-dark-blue: hsl(212, 21%, 14%);
+  --clr-gray-blue: hsl(228, 12%, 48%);
+
+  /* Fonts */
+  --ff-main: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%; /* 1rem = 10px */
+  font-family: var(--ff-main);
+  color: var(--clr-gray-blue);
+  height: 100%;
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+/*************************/
+/* General Styling */
+
+body {
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-cream);
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 60rem;
+
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .product {
+    max-height: 60rem;
+    max-width: 40rem;
+    margin: 3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .product__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.product__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2rem;
+}
+
+.product__tag {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-size: 3.2rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-dark-blue);
+  line-height: 1.2;
+}
+
+.product__description {
+  font-size: 1.2rem;
+}
+
+.product__price--curent {
+  font-size: 3.2rem;
+  font-family: var(--ff-secondary);
+  font-weight: 700;
+  color: var(--clr-dark-cyan);
+}
+
+.product__price--og {
+  font-size: 1.3rem;
+  text-decoration: line-through;
+}
+
+.product__btn {
+  height: 4rem;
+  width: 80%;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--clr-dark-cyan);
+  color: #fff;
+  font-size: 1.4rem;
+  transition: all 0.2s;
+}
+
+.product__btn:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+@media only screen and (max-width: 43.75em) {
+  .product__btn {
+    min-width: 100%;
+  }
+}
+
+/*************************/
+/* Helper Classes */
+
+.flex-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
